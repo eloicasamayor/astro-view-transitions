@@ -1,38 +1,7 @@
 ---
 import JobItem from "./JobItem.astro";
 import {jobs} from "../data/jobs"
-
-import fg from 'fast-glob';
-
-export async function getStaticPaths() {
-    // get all collection folder paths: 'public/assets/[collection]'
-    const collections: string[] = fg.sync('public/assets/*', { onlyDirectories: true })
-
-    // Create a new route for every collection
-    return collections.map(collection => {
-
-        // Create Route
-        return {
-            params: {
-                // Return folder name of collection as dynamic parameter [collection]
-                collection: collection.split('/').pop()
-            },
-            props: {
-                // Return array of all image srcs in collection as prop 'images'
-                images: fg.sync(`${collection}/**/*.{png,jpg}`).map(img => img.replace('public/', '/'))
-            }
-        }
-    })
-}
-export interface Props {
-    images: string[];
-}
-
-const { collection } = Astro.params
-
-const { images } = Astro.props
-
 ---
 <ul class='grid grid-cols-2 p-8 gap-4'>
-    {jobs.map((job, i) => <JobItem title={job.title} url={job.url} img={images[i]} /> )}
+    {jobs.map((job, i) => <JobItem title={job.title} url={job.url} /> )}
 </ul>
