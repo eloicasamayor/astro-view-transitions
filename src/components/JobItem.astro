@@ -1,0 +1,9 @@
+---
+export interface Props {
+    title: string,
+    url: string
+}
+
+const { title, url} = Astro.props
+---
+<li><a class="text-white" href={url}>{title}<img transition:name={url} src={`/assets/${url}.png`}/></a></li>

@@ -1,0 +1,7 @@
+---
+import JobItem from "./JobItem.astro";
+import {jobs} from "../data/jobs"
+---
+<ul class='grid grid-cols-2 p-8 gap-4'>
+    {jobs.map(job => <JobItem title={job.title} url={job.url} /> )}
+</ul>
