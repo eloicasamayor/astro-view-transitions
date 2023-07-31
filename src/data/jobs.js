@@ -1,14 +1,22 @@
 export const jobs = [{
-    title: 'Frontend web developer at NPAW',
-    url: 'frontend-web-dev-npaw'
+    title: 'Luisa es un árbol de Navidad',
+    url: 'arbol-navidad'
 },
 {
-    title: 'Frontend web developer at VASS',
-    url: 'frontend-dev-vass'
+    title: 'Luisa es un dinosaurio',
+    url: 'dinosaurio'
 },
 {
-    title: 'Unity developer at Walk3D',
-    url: 'unity-developer-walk3d'
+    title: 'Luisa es una manzana',
+    url: 'manzana'
+},
+{
+    title: 'Luisa es una piña',
+    url: 'piña'
+},
+{
+    title: 'Luisa es un tiburón',
+    url: 'tiburon'
 }]
 
 
